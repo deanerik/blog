@@ -1,0 +1,436 @@
+<meta charset="utf-8">
+
+
+
+                                        
+                         **Diagrams with markdeep**
+
+
+General Information
+===============================================================================
+This is a method to make diagrams in plain text, 
+but have those diagrams remain readable before they've been rendered.
+This allows you to make diagrams, write code and prose in the same program,
+enabling good programming tools to be used on them all, 
+while remaining understandable and simple, and then beautiful,
+pre and post rendering, respectively.
+
+
+1. Figures must be framed by asterisks
+2. Figures contain plaintext only 
+        - essentially a code fence 
+        - cannot contain LaTeX math
+        - use unicode symbols if you need math, sub/superscript
+3. File must have the line of markdeep code at the bottom
+4. File is saved with extension .md.html, and opened in browser
+
+**Making the figures**
+
+        1. can draw on asciiflow
+        2. use vim drawit and replace mode
+
+**Alternatives for rendering figures**
+
+These could be done within code blocks too 
+
+        1. `plantuml` (kind of old school, but technical looking)            
+        2. `mermaid.js` (like PowerPoint kind of plots)          
+        3. `flowchart.js` (looks more basic and not so good)
+        4. `chart.js` (plot.ly kind of excel type simple plots)
+        5. `dot` / `vis.js` (can do many types of plots, looks alright)
+        6. `js-sequence-diagrams` (look simple, hand drawn sketches 
+
+
+**Helpful tips**
+- can set filetype to vimwiki / markdown to get highlighting & autoformatting
+
+---
+
+<div style="columns:2;-webkit-columns:2;-moz-columns:2;column-gap:3em;-webkit-column-gap:3em;-moz-column-gap:3em">
+
+And here is some two-column text junk:
+
+(Use the 2col snippet in vimwiki to get it).
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+</div>
+
+
+
+Methods for drawing figures
+-------------------------------------------------------------------------------
+
+These are how you do definitions by the way:
+
+Markdeep 
+:  Allows for curved lines 
+    
+   Doesn't allow LaTeX inside the figures
+ 
+asciiflow
+:  Box drawing characters rendered exactly as is
+   
+   Easier to draw, but the figures are just unicode blocks
+
+Vim DrawIt
+:  Helpful for free cursor movement
+
+   Some shortcuts for quick shape generation
+
+
+Miscellaneous
+--------------------------------------------------------------------------------
+
+> "blockquotes need plaintext and non curly quotes plus the > to look fancy"
+
+> but just the greater than sign will do an email style indent blockquote,
+> however, it needs two lines or more to work
+
+
+!!!
+   Simple notes and tips don’t need headers
+
+!!! Tip You can have a header 
+    But you must have body text too 
+
+!!! WARNING 
+    Warnings look back with no header
+
+!!! ERROR: Lack indentation
+    If you have body text, make sure it’s indented
+    
+
+
+
+Project management
+================================================================================
+
+Trying out both a calendar with specific deadline approach <br>
+as well as a gantt chart visualization.
+
+What are the rules of gantt charts? <br>
+How are these supposed to work? Looking at the sequence of dependencies?
+
+
+Schedules - dates and things to do on them
+--------------------------------------------------------------------------------
+
+May 21 2021: Testing out markdeep
+ - Made model
+ - Tested other markdown features
+
+May 21 2021: Drink beers 
+ - Le tired 
+ - Yet still nothing productive done
+
+May 22 2021: Produce manuscript
+ - Test
+ - second item
+
+(May 24 2021): Celebration time
+
+May 30 2021: Final draft manuscript
+ - Another thing
+
+June 1 2021: Begin draft of proposal
+ - needs to have all chapters defined
+
+June 24 2021: Finish draft of proposal
+ - needs to have all chapters defined
+
+
+Task timeline
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*             ║        Coding┆    Drafting┆        Finalize┆
+* ════════════╬══════════════╪════════════╪════════════════╪══
+*   YMXB Code ║ ▆▆┐          ┆            ┆                ┆
+*  Base model ║   └▆▆▆▆▆┐    ┆            ┆                ┆
+* Sensitivity ║     └▆▆┐│    ┆            ┆                ┆
+*    Analysis ║        │└▆▆▆┐┆            ┆                ┆
+*     Methods ║        └▆▆ │└┆▆▆▆▆▆▆      ┆                ┆
+*     Results ║          │ └─┆─▆▆▆▆▆▆▆    ┆                ┆
+*       Plots ║          │   ┆   └▆▆▆┐    ┆                ┆
+*  Manuscript ║          └▆▆▆┆       └▆▆▆▆┆▆▆▆▆            ┆
+*
+*  ▆ ┐ │ ├
+*    └ ─ ┴	
+*     
+*
+********************************************************************************
+
+
+
+
+Task completion tracker
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*             ║  Preproduction┆       Alpha┆             RC1┆
+* ════════════╬═══════════════╪════════════╪════════════════╪══
+*   YMXB Code ║ *  *  o       ┆            ┆                ┆
+*             ║    |          ┆            ┆                ┆
+*    Analysis ║     '-*  o  o ┆ o          ┆                ┆
+*             ║       |       ┆ |          ┆                ┆
+*     Methods ║       |       ┆  '-o o o   ┆                ┆
+*             ║       |       ┆            ┆                ┆
+*       Plots ║        '-o  o ┆ o  o o o   ┆                ┆
+*             ║               ┆            ┆                ┆
+*     |  
+*      '-
+*******************************************************************************
+
+
+
+
+Largescale project planning
+--------------------------------------------------------------------------------
+
+*******************************************************************************
+*   Module   ║          June┆        July┆          August┆
+* ═══════════╬══════════════╪════════════╪════════════════╪══
+* Base model ║ ▓▓▓▓▓▓▓▓███┐ ┆           ▆┆▆▆▆             ┆
+*            ║   │        │ ┆   ┐        ┆                ┆
+*  ∆ Climate ║   └░░░░░▒▒▒▒▒┆▒  └██████  ┆▆▆▆▆▆▆▆         ┆
+*            ║            │ ┆        └▆▆▆┆▆▆▆▆▆▆▆▆▆▆▆▆    ┆
+*     Winter ║        ▆▆▆▆│▆┆▆▆┐         ┆     ░░░░▆▆▆▆   ┆
+*            ║            │ ┆  └────────▆┆▆▆▆▆▆▆▆▆▆▆▆▆▆   ┆
+*   Proposal ║    ░░░░░░░░░░┆▆▆▆▆▆▆▆▆▆▆▆▆┆▆▆▆▆ ░░░░   ▆   ┆
+*            ║              ┆            ┆    Freeze      ┆
+*
+*                  Progress: 0 ░░ ¼ ▒▒ ½ ▓▓ ¾ ██ 1
+********************************************************************************
+
+
+Population Model Graphics
+================================================================================
+
+### Flow diagram for model
+
+********************************************************************************
+*                                                                               
+*   .---.        .---.        .---.        .---.        .---.        .---.      
+*  |     | rSA₁ |     | rSA₂ |     | rSA₃ |     | rSA₄ |     | rSA₅ |     |     
+*  |  J  +----->| SA₁ +----->| SA₂ +----->| SA₃ +----->| SA₄ +----->| SA₅ |     
+*   '---'        '-+-'        '-+-'        '-+-'        '-+-'        '-+-'      
+*     ^rJ          |            |            |            |            |        
+*     |            |rSA₂        |rSA₃        |rSA₄        |rSA₅        |rSA₆    
+*     |     .--+ .-v-.   .--+ .-v-.   .--+ .-v-.   .--+ .-v-.   .--+ .-v-.      
+*     |    |    |     | |    |     | |    |     | |    |     | |    |     |     
+*     |     '-->| SA₂ |  '-->| SA₃ |  '-->| SA₄ |  '-->| SA₅ |  '-->| SA₆ |     
+*     |      mA₂ '-+-'    mA₃ '-+-'    mA₄ '-+-'    mA₅ '-+-'     mA₆'-+-'      
+*     |            |            |            |            |            |        
+*     |÷2          +fA₂         +fA₃         +fA₄         +fA₅         +fA₆     
+*      '----------'------------'------------'------------'------------'         
+*                                                                               
+********************************************************************************
+
+### Mini flow diagram
+
+********************************************************************************
+*                                                                               
+*   .-.  rSA₂  .-. rSA₃   .-.  rSA₄  .-.  rSA₅  .-.  rSA₆  .-.  rSA₇  .-.       
+*  | J +----->|SA₁+----->|SA₂+----->|SA₃+----->|SA₄+----->|SA₅+----->|SA₆|      
+*   '-'        '+'        '+'        '+'        '+'        '+'        '+'       
+*    ^rJ        vrA₂       vrA₃       vrA₄       vrA₅       vrA₆       vrA₇     
+*    |    .--+ .-.   .--+ .-.   .--+ .-.   .--+ .-.   .--+ .-.   .--+ .-.       
+*    |   | mA₂| A₂| | mA₃| A₃| | mA₄| A₄| | mA₅| A₅| | mA₆| A₆| | mA₇| A₇|      
+*    |    '--> '+'   '--> '+'   '--> '+'   '--> '+'   '--> '+'   '--> '+'       
+*    |÷2        +fA₂       +fA₃       +fA₄       +fA₅       +fA₆       +fA₇     
+*     '--------'----------'----------'----------'----------'----------'         
+*                                                                              
+********************************************************************************
+
+### Asciiflow version
+
+********************************************************************************
+* ┌───┐ rSA₁┌───┐ rSA₂┌───┐ rSA₃┌───┐ rSA₄┌───┐ rSA₅┌───┐    
+* │ J ├─────►SA₁├─────►SA₂├─────►SA₃├─────►SA₄├─────►SA₅│    
+* └─▲─┘     └─┬─┘     └─┬─┘     └─┬─┘     └─┬─┘     └─┬─┘    
+*   │rJ       │         │         │         │         │      
+*   │         │rA₂      │rA₃      │rA₄      │rA₅      │rA₆   
+*   │     ┌─┬─▼─┐   ┌─┬─▼─┐   ┌─┬─▼─┐   ┌─┬─▼─┐   ┌─┬─▼─┐    
+*   │     └▼│ A₂│   └▼│ A₃│   └▼│ A₄│   └▼│ A₅│   └▼│ A₆│    
+*   │    mA₂└─┬─┘  mA₃└─┬─┘  mA₄└─┬─┘  mA₅└─┬─┘  mA₆└─┬─┘    
+*   │         │         │         │         │         │      
+*   │         │         │         │         │         │      
+*   └─────────┴─────────┴─────────┴─────────┴─────────┘      
+*           fA₂/2     fA₃/2     fA₄/2     fA₅/2     fA₆/2
+*                                                            
+********************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+### YMXB Code tables - schematics
+
+********************************************************************************
+*                                                                       
+*    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━┳━━━━┳━━━━┳━━━━┳   ┳━━━━┓        
+*    ┃ Location                   ┃ A₁ ┃ A₂ ┃ A₃ ┃ A₄ ┃ ⋯ ┃ Aₙ ┃             
+*    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━╇━━━━╇━━━━╇━━━━╇   ╇━━━━┩              
+*    │ Lower Missouri River       │ 189│ 371│ 524│ 654│ ⋯ │ 934│             
+*    ├────────────────────────────┼────┼────┼────┼────┼   ┼────┤              
+*    │ Lake Katlabukh, Ukraine    │ 371│ 431│ 488│ 544│ ⋯ │ 833│        
+*    ├────────────────────────────┼────┼────┼────┼────┼   ┼────┤        
+*    │ Lake Dgal Wielki, Poland   │ 125│ 266│ 386│ 490│ ⋯ │ 718│        
+*    ├────────────────────────────┼────┼────┼────┼────┼   ┼────┤        
+*    │ Dahuofang Reservoir, China │ 129│ 329│ 479│ 590│ ⋯ │ 859│        
+*    └────────────────────────────┴────┴────┴────┴────┴   ┴────┘        
+*                                                                       
+********************************************************************************
+
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*                                                                
+*                                       .---------------------. 
+*                                      |      |                |
+*                                      | Size |                |
+*                                      |      |                |
+*                                      |      |                |
+*                                      |      +--------------- |
+*                                      |       Maturation Age  |
+*                                       '----------------------+ 
+*
+*    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━┳━━━━┳━━━━┳━━━━┳   ┳━━━━┓
+*    ┃ Location                   ┃ A₁ ┃ A₂ ┃ A₃ ┃ A₄ ┃ ⋯ ┃ Aₙ ┃     
+*    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━╇━━━━╇━━━━╇━━━━╇   ╇━━━━┩     
+*    │ Lower Missouri River       │ 189│ 371│ 524│ 654│ ⋯ │ 934│     
+*    ├────────────────────────────┼────┼────┼────┼────┼   ┼────┤
+*    │ Lake Katlabukh, Ukraine    │ 371│ 431│ 488│ 544│ ⋯ │ 833│
+*    ├────────────────────────────┼────┼────┼────┼────┼   ┼────┤
+*    │ Lake Dgal Wielki, Poland   │ 125│ 266│ 386│ 490│ ⋯ │ 718│
+*    ├────────────────────────────┼╴.-------------------------.╵
+*    │ Dahuofang Reservoir, China │|129│ 329│ 479│ 590│ ⋯ │ 859|
+*    └────────────────────────────┴╴'-------------------------'┘
+*           +--------------------.   ^     
+*           | Size across ages    |  |     
+*           | under a single      +-'      
+*           | maturation scenario |        
+*            '-------------------'         
+********************************************************************************
+
+--------------------------------------------------------------------------------
+        
+********************************************************************************
+*
+*                                       .---------------------.   
+*                                      |      |                |  
+*                                      | Size |                |  
+*                                      |      |                |  
+*                                      |      |                |  
+*                                      |      +--------------- |  
+*                                      |       Maturation Age  |  
+*                                       '----------------------+  
+*                                                                       
+*    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━┳━━━━┳━━━━┳━━━━┳   ┳━━━━┓     
+*    ┃ Location                   ┃ A₁ ┃ A₂ ┃ A₃ ┃ A₄ ┃ ⋯ ┃ Aₙ ┃     
+*    ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇╸.-.┗━━━━╇━━━━╇━━━━╇   ╇━━━━┩     
+*    │ Lower Missouri River, USA  │|189| 371│ 524│ 654│ ⋯ │ 934│     
+*    ├────────────────────────────┼|───|────┼────┼────┼   ┼────┤     
+*    │ Lake Katlabukh, Ukraine    │|371| 431│ 488│ 544│ ⋯ │ 833│     
+*    ├────────────────────────────┼|───|────┼────┼────┼   ┼────┤     
+*    │ Lake Dgal Wielki, Poland   │|125| 266│ 386│ 490│ ⋯ │ 718│     
+*    ├────────────────────────────┼|───|────┼────┼────┼   ┼────┤     
+*    │ Dahuofang Reservoir, China │|129| 329│ 479│ 590│ ⋯ │ 859│     
+*    └────────────────────────────┴╴'-'╶────┴────┴────┴   ┴────┘     
+*                                    ^   .---------------------+
+*                                    |  | Size range at age-1  |
+*                                     '-+ across different     |
+*                                       | maturation scenarios |
+*                                        '--------------------'
+*                           
+********************************************************************************
+
+
+
+
+
+
+
+Experimental
+================================================================================
+
+
+********************************************************************************
+*
+*
+*                      
+*                      
+*                      
+*                      
+*                      
+*                     
+*          
+*          
+*          
+*          
+*          
+*                         
+*                       
+*
+*
+*
+*
+*
+********************************************************************************
+
+
+
+# Toolbox
+                                  
+********************************************************************************
+*
+*      .-.           .-.           .-.           .-.           .-.
+*     |   |         |   |         |   |         |   |         |   |
+*  .---------.   .--+---+--.   .--+---+--.   .--|   |--.   .--+   +--.
+* |           | |           | |   |   |   | |   |   |   | |           |
+*  '---------'   '--+---+--'   '--+---+--'   '--|   |--'   '--+   +--'
+*     |   |         |   |         |   |         |   |         |   |
+*      '-'           '-'           '-'           '-'           '-'
+*
+*                      .-.                                                      
+*     ⎧    ⎫          |   |                                                     
+*     │    ⎪       .------|--.                                                  
+*  Xᵢ ⎨    ⎬      |   |   |   |                                                 
+*     │    ⎪       '--|------'                                                  
+*     ⎩    ⎭          |   |                                                     
+*                      '-'                                                      
+* 
+*   A₂ A₃ A₄ A₅ A₆
+* 
+*  .---------------.
+*  |   |   |   |   |
+*  |---+---+---+---|
+*  |   |   |   |   |
+*  |---+---+---+---|
+*  |   |   |   |   |
+*  '---------------'
+* 
+********************************************************************************
+
+##### Custom styling
+
+Put this in `<link rel="stylesheet" href="./latex.css">` to get local stylesheet
+with header numbers turned off. Or just have embedded lines at the bottm
+
+<style>.md h1:before{ content: none; }</style>
+<style>.md h2:before{ content: none; }</style>
+<style>.md h3:before{ content: none; }</style>
+<style>.md h4:before{ content: none; }</style>
+<style>.md h5:before{ content: none; }</style>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="my_markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+
