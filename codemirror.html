@@ -1,0 +1,63 @@
+<html><head><title>CodeMirror: Vim exercise</title>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/dialog/dialog.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/dialog/dialog.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/searchcursor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/keymap/vim.min.js"></script>
+
+
+<style>
+      .CodeMirror {border-top: 1px solid transparent; border-bottom: 1px solid transparent;}
+</style>
+
+</head>
+<body>
+
+<article>
+
+<form><textarea id="code" name="code" style="display: none;">**Exercise**
+This is a sentence, do not delete me.
+
+But navigate here and delete this *word* with DD
+</textarea>
+
+</form>
+<div style="font-size: 11px; width: 300px; height: 30px; color: orange;">Key buffer: <span id="command-display"></span></div>
+<div style="font-size: 11px; width: 300px; height: 30px; color: orange;">Vim mode: <span id="vim-mode"></span></div>
+
+
+    <script>
+      CodeMirror.commands.save = function(){ alert("Saving"); };
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-csrc",
+        keyMap: "vim",
+        matchBrackets: true,
+        showCursorWhenSelecting: true,
+        theme: "monokai"
+      });
+      var commandDisplay = document.getElementById('command-display');
+      var keys = '';
+      CodeMirror.on(editor, 'vim-keypress', function(key) {
+        keys = keys + key;
+        commandDisplay.innerText = keys;
+      });
+      CodeMirror.on(editor, 'vim-command-done', function(e) {
+        keys = '';
+        commandDisplay.innerHTML = keys;
+      });
+      var vimMode = document.getElementById('vim-mode');
+      CodeMirror.on(editor, 'vim-mode-change', function(e) {
+        vimMode.innerText = JSON.stringify(e);
+      });
+    </script>
+
+  </article>
+</body></html>
